@@ -56,7 +56,7 @@ class _LoginPageWidgetState extends State<LoginPageWidget> {
                     padding:
                         EdgeInsetsDirectional.fromSTEB(15.0, 90.0, 15.0, 0.0),
                     child: Container(
-                      width: MediaQuery.of(context).size.width * 1.0,
+                      width: MediaQuery.sizeOf(context).width * 1.0,
                       height: 85.0,
                       decoration: BoxDecoration(
                         color: Color(0xFF473488),
@@ -93,7 +93,7 @@ class _LoginPageWidgetState extends State<LoginPageWidget> {
                     padding:
                         EdgeInsetsDirectional.fromSTEB(12.0, 20.0, 0.0, 0.0),
                     child: Container(
-                      width: MediaQuery.of(context).size.width * 1.0,
+                      width: MediaQuery.sizeOf(context).width * 1.0,
                       height: 70.0,
                       decoration: BoxDecoration(
                         color: Color(0xFF473488),
@@ -142,7 +142,7 @@ class _LoginPageWidgetState extends State<LoginPageWidget> {
                     padding:
                         EdgeInsetsDirectional.fromSTEB(10.0, 15.0, 10.0, 0.0),
                     child: Container(
-                      width: MediaQuery.of(context).size.width * 1.0,
+                      width: MediaQuery.sizeOf(context).width * 1.0,
                       height: 200.0,
                       decoration: BoxDecoration(
                         color: Color(0xFF473488),
@@ -309,7 +309,7 @@ class _LoginPageWidgetState extends State<LoginPageWidget> {
                     padding:
                         EdgeInsetsDirectional.fromSTEB(10.0, 2.0, 10.0, 0.0),
                     child: Container(
-                      width: MediaQuery.of(context).size.width * 1.0,
+                      width: MediaQuery.sizeOf(context).width * 1.0,
                       height: 50.0,
                       decoration: BoxDecoration(
                         color: Color(0xFF473488),

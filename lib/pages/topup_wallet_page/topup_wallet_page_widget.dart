@@ -53,7 +53,9 @@ class _TopupWalletPageWidgetState extends State<TopupWalletPageWidget> {
                 width: 50.0,
                 height: 50.0,
                 child: CircularProgressIndicator(
-                  color: FlutterFlowTheme.of(context).primary,
+                  valueColor: AlwaysStoppedAnimation<Color>(
+                    FlutterFlowTheme.of(context).primary,
+                  ),
                 ),
               ),
             ),
@@ -195,7 +197,7 @@ class _TopupWalletPageWidgetState extends State<TopupWalletPageWidget> {
                                       ),
                                     ),
                                     Text(
-                                      '₹ ${topupWalletPageWalletRecord!.amount.toString()}',
+                                      '₹ ${topupWalletPageWalletRecord?.amount?.toString()}',
                                       style: FlutterFlowTheme.of(context)
                                           .bodyMedium,
                                     ),
@@ -219,7 +221,7 @@ class _TopupWalletPageWidgetState extends State<TopupWalletPageWidget> {
                           padding: EdgeInsetsDirectional.fromSTEB(
                               20.0, 16.0, 20.0, 0.0),
                           child: Container(
-                            width: MediaQuery.of(context).size.width * 1.0,
+                            width: MediaQuery.sizeOf(context).width * 1.0,
                             height: 200.0,
                             decoration: BoxDecoration(
                               color: FlutterFlowTheme.of(context)
@@ -304,7 +306,7 @@ class _TopupWalletPageWidgetState extends State<TopupWalletPageWidget> {
                                       0.0, 20.0, 0.0, 0.0),
                                   child: Container(
                                     width:
-                                        MediaQuery.of(context).size.width * 1.0,
+                                        MediaQuery.sizeOf(context).width * 1.0,
                                     height: 55.0,
                                     decoration: BoxDecoration(
                                       borderRadius: BorderRadius.circular(12.0),
@@ -349,7 +351,7 @@ class _TopupWalletPageWidgetState extends State<TopupWalletPageWidget> {
                     padding:
                         EdgeInsetsDirectional.fromSTEB(35.0, 0.0, 35.0, 0.0),
                     child: Container(
-                      width: MediaQuery.of(context).size.width * 1.0,
+                      width: MediaQuery.sizeOf(context).width * 1.0,
                       height: 150.0,
                       decoration: BoxDecoration(
                         color: Color(0xFFF7F7F7),
@@ -448,12 +450,10 @@ class _TopupWalletPageWidgetState extends State<TopupWalletPageWidget> {
                         EdgeInsetsDirectional.fromSTEB(0.0, 20.0, 0.0, 0.0),
                     child: FFButtonWidget(
                       onPressed: () async {
-                        final walletUpdateData = {
+                        await topupWalletPageWalletRecord!.reference.update({
                           'amount': FieldValue.increment(
                               double.parse(_model.textController.text)),
-                        };
-                        await topupWalletPageWalletRecord!.reference
-                            .update(walletUpdateData);
+                        });
                         setState(() {
                           _model.textController?.clear();
                         });
@@ -494,7 +494,7 @@ class _TopupWalletPageWidgetState extends State<TopupWalletPageWidget> {
                           padding: EdgeInsetsDirectional.fromSTEB(
                               20.0, 0.0, 20.0, 0.0),
                           child: Container(
-                            width: MediaQuery.of(context).size.width * 1.0,
+                            width: MediaQuery.sizeOf(context).width * 1.0,
                             height: 50.0,
                             decoration: BoxDecoration(
                               color: FlutterFlowTheme.of(context)

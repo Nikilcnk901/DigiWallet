@@ -60,7 +60,9 @@ class _HomePageWidgetState extends State<HomePageWidget> {
                 width: 50.0,
                 height: 50.0,
                 child: CircularProgressIndicator(
-                  color: FlutterFlowTheme.of(context).primary,
+                  valueColor: AlwaysStoppedAnimation<Color>(
+                    FlutterFlowTheme.of(context).primary,
+                  ),
                 ),
               ),
             ),
@@ -91,7 +93,7 @@ class _HomePageWidgetState extends State<HomePageWidget> {
                         Stack(
                           children: [
                             Container(
-                              width: MediaQuery.of(context).size.width * 1.0,
+                              width: MediaQuery.sizeOf(context).width * 1.0,
                               height: 100.0,
                               decoration: BoxDecoration(
                                 color: Color(0xFF473488),
@@ -176,7 +178,7 @@ class _HomePageWidgetState extends State<HomePageWidget> {
                                       10.0, 100.0, 10.0, 0.0),
                                   child: Container(
                                     width:
-                                        MediaQuery.of(context).size.width * 1.0,
+                                        MediaQuery.sizeOf(context).width * 1.0,
                                     height: 300.0,
                                     decoration: BoxDecoration(
                                       color: Color(0xFFF7F7F7),
@@ -227,7 +229,7 @@ class _HomePageWidgetState extends State<HomePageWidget> {
                                       0.0, 150.0, 0.0, 0.0),
                                   child: Container(
                                     width:
-                                        MediaQuery.of(context).size.width * 1.0,
+                                        MediaQuery.sizeOf(context).width * 1.0,
                                     height: 300.0,
                                     decoration: BoxDecoration(
                                       color: FlutterFlowTheme.of(context)
@@ -525,12 +527,10 @@ class _HomePageWidgetState extends State<HomePageWidget> {
                                                         5.0, 10.0, 0.0, 0.0),
                                                 child: FFButtonWidget(
                                                   onPressed: () async {
-                                                    final walletUpdateData =
-                                                        createWalletRecordData();
                                                     await homePageWalletRecord!
                                                         .reference
                                                         .update(
-                                                            walletUpdateData);
+                                                            createWalletRecordData());
                                                   },
                                                   text: 'View Balance',
                                                   options: FFButtonOptions(
@@ -581,7 +581,7 @@ class _HomePageWidgetState extends State<HomePageWidget> {
                       padding: EdgeInsetsDirectional.fromSTEB(
                           10.0, 10.0, 10.0, 10.0),
                       child: Container(
-                        width: MediaQuery.of(context).size.width * 1.0,
+                        width: MediaQuery.sizeOf(context).width * 1.0,
                         height: 340.0,
                         decoration: BoxDecoration(
                           color: FlutterFlowTheme.of(context).accent3,
@@ -1003,7 +1003,7 @@ class _HomePageWidgetState extends State<HomePageWidget> {
                       padding: EdgeInsetsDirectional.fromSTEB(
                           10.0, 10.0, 10.0, 10.0),
                       child: Container(
-                        width: MediaQuery.of(context).size.width * 1.0,
+                        width: MediaQuery.sizeOf(context).width * 1.0,
                         height: 200.0,
                         decoration: BoxDecoration(
                           color: FlutterFlowTheme.of(context).accent3,
@@ -1271,7 +1271,7 @@ class _HomePageWidgetState extends State<HomePageWidget> {
                       padding:
                           EdgeInsetsDirectional.fromSTEB(10.0, 0.0, 10.0, 0.0),
                       child: Container(
-                        width: MediaQuery.of(context).size.width * 1.0,
+                        width: MediaQuery.sizeOf(context).width * 1.0,
                         height: 200.0,
                         decoration: BoxDecoration(
                           color: FlutterFlowTheme.of(context).accent3,
@@ -1317,7 +1317,7 @@ class _HomePageWidgetState extends State<HomePageWidget> {
                                     padding: EdgeInsetsDirectional.fromSTEB(
                                         0.0, 10.0, 0.0, 0.0),
                                     child: Container(
-                                      width: MediaQuery.of(context).size.width *
+                                      width: MediaQuery.sizeOf(context).width *
                                           1.0,
                                       height: 150.0,
                                       child: Stack(

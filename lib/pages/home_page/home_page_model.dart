@@ -18,6 +18,7 @@ class HomePageModel extends FlutterFlowModel {
   final unfocusNode = FocusNode();
   // State field(s) for PageView widget.
   PageController? pageViewController;
+
   int get pageViewCurrentIndex => pageViewController != null &&
           pageViewController!.hasClients &&
           pageViewController!.page != null
@@ -35,5 +36,4 @@ class HomePageModel extends FlutterFlowModel {
   /// Action blocks are added here.
 
   /// Additional helper methods are added here.
-
 }
